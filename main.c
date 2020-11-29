@@ -15,17 +15,41 @@
 #include "lab1.h"
 #include "lab2.h"
 #include "lab4.h"
+#include "lab6.h"
 #include "banking.h"
 #include "priority_queue.h"
 
 //export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/Документы/ИТМО/3курс(весна)/Распределенные вычисления/pa2";
 //LD_PRELOAD="~/Документы/ИТМО/3курс(весна)/Распределенные вычисления/pa2/lib64"
 
+void set_initial_state(int *reqf, int *forks, int *dirty, int proc_num, int N)
+{
+	int i;
+	for (i = 1; i <= N; i++) {
+		if (i == proc_num) {
+			reqf[i] = -1;
+			forks[i] = -1;
+			dirty[i] = -1;
+		}
+		if (i < proc_num) {
+			reqf[i] = 1;
+			forks[i] = 0;
+			dirty[i] = 0;
+		}
+		if (i > proc_num) {
+			reqf[i] = 0;
+			forks[i] = 1;
+			dirty[i] = 1;
+		}
+	}
+}
 
 int main(int argc, char* argv[])
 {
 	pid_t pid;
 	int i, N, log_fd;
+	int *reqf, *forks, *dirty;
+	int is_trying_cs = 0;
 	int*** fds;
 	local_id proc_id;
 	balance_t balance = 0;
@@ -44,6 +68,10 @@ int main(int argc, char* argv[])
 	N = opts->N;
 	fds = create_matrix(N);
 
+	reqf = (int *) malloc(sizeof(int) * (N + 1));
+	forks = (int *) malloc(sizeof(int) * (N + 1));
+	dirty = (int *) malloc(sizeof(int) * (N + 1));
+
 	if(log_pipes(fds, N) == -1){
 		printf("Error writing to log file");
 	}
@@ -59,6 +87,7 @@ int main(int argc, char* argv[])
 				break;
 			case 0:
 				proc_id = i + 1;
+				set_initial_state(reqf, forks, dirty, proc_id, N);
 				balance = opts->values[i];
 				global_time = 0;
 				balanceState -> s_balance = balance;
@@ -75,7 +104,7 @@ int main(int argc, char* argv[])
 				first_phase(fds, proc_id, N, log_fd, balance);
 
 				if(opts->mutexl == 1){
-					do_prints_mutexl(fds, proc_id, N, log_fd);
+					do_prints_mutexl(fds, proc_id, N, log_fd, reqf, forks, dirty, &is_trying_cs);
 				}else{
 					do_prints(proc_id, N);
 				}

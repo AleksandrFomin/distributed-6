@@ -1,34 +1,46 @@
-1: process 1 (pid 15167, parent 15166) has STARTED with balance $10
-1: process 2 (pid 15168, parent 15166) has STARTED with balance $20
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-1: process 2 (pid 15168, parent 15166) has STARTED with balance $20
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-1: process 1 (pid 15167, parent 15166) has STARTED with balance $10
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-5: process 0 received all STARTED messages
-1: process 2 (pid 15168, parent 15166) has STARTED with balance $20
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-1: process 1 (pid 15167, parent 15166) has STARTED with balance $10
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-1: process 2 (pid 15168, parent 15166) has STARTED with balance $20
-1: process 3 (pid 15169, parent 15166) has STARTED with balance $30
-7: process 2 received all STARTED messages
-7: process 3 received all STARTED messages
-7: process 1 received all STARTED messages
-101: process 1 has DONE with balance $10
-100: process 3 has DONE with balance $30
-101: process 2 has DONE with balance $20
-101: process 1 has DONE with balance $10
-101: process 2 has DONE with balance $20
-100: process 3 has DONE with balance $30
-100: process 3 has DONE with balance $30
-101: process 1 has DONE with balance $10
-105: process 0 received all DONE messages
-100: process 3 has DONE with balance $30
-101: process 2 has DONE with balance $20
-100: process 3 has DONE with balance $30
-104: process 1 received all DONE messages
-101: process 2 has DONE with balance $20
-100: process 3 has DONE with balance $30
-104: process 3 received all DONE messages
-104: process 2 received all DONE messages
+1: process 1 (pid 31843, parent 31842) has STARTED with balance $10
+1: process 2 (pid 31844, parent 31842) has STARTED with balance $20
+1: process 3 (pid 31845, parent 31842) has STARTED with balance $30
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 1 (pid 31843, parent 31842) has STARTED with balance $10
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 2 (pid 31844, parent 31842) has STARTED with balance $20
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 3 (pid 31845, parent 31842) has STARTED with balance $30
+6: process 0 received all STARTED messages
+1: process 1 (pid 31843, parent 31842) has STARTED with balance $10
+1: process 2 (pid 31844, parent 31842) has STARTED with balance $20
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 3 (pid 31845, parent 31842) has STARTED with balance $30
+1: process 2 (pid 31844, parent 31842) has STARTED with balance $20
+1: process 1 (pid 31843, parent 31842) has STARTED with balance $10
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 3 (pid 31845, parent 31842) has STARTED with balance $30
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+1: process 3 (pid 31845, parent 31842) has STARTED with balance $30
+1: process 4 (pid 31846, parent 31842) has STARTED with balance $40
+9: process 2 received all STARTED messages
+9: process 1 received all STARTED messages
+9: process 3 received all STARTED messages
+9: process 4 received all STARTED messages
+49: process 1 has DONE with balance $10
+49: process 1 has DONE with balance $10
+49: process 1 has DONE with balance $10
+49: process 1 has DONE with balance $10
+85: process 2 has DONE with balance $20
+85: process 2 has DONE with balance $20
+85: process 2 has DONE with balance $20
+85: process 2 has DONE with balance $20
+105: process 3 has DONE with balance $30
+105: process 3 has DONE with balance $30
+105: process 3 has DONE with balance $30
+105: process 3 has DONE with balance $30
+107: process 4 has DONE with balance $40
+107: process 4 has DONE with balance $40
+107: process 4 has DONE with balance $40
+109: process 0 received all DONE messages
+107: process 4 has DONE with balance $40
+107: process 4 has DONE with balance $40
+109: process 1 received all DONE messages
+107: process 4 has DONE with balance $40
